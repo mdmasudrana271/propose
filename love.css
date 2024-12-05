@@ -1,18 +1,20 @@
-body
-{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    background-image: url(image/accept.jpg);
-    background-position: center;
-    background-size: cover;
+body {
+  background-color: #f7f0f5; /* Soft background to enhance the gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
+.love-txt {
+  font-size: 4rem;
+  font-weight: bold;
+  color: red;
+  font-family: "Cursive", "Serif";
 
-.love
-{
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 100px;
-    margin-top: 250px;
-    color: red;
+  text-align: center;
+}
+.love {
+  animation: rubberBand;
+  animation-duration: 3s;
 }

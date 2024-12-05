@@ -1,60 +1,35 @@
-*
-{
-    margin: 0;
-    padding: 0;
-
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    background-image: url(image/propose.jpg);
-    background-position: c;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.props {
+  animation: heartBeat infinite alternate;
+  animation-duration: 2s;
 }
 
-.heading
-{
-    text-align: center;
-    margin-top: 100px;
+.btn-container {
+  animation: zoomInUp;
+  animation-duration: 2s;
 }
 
-.detail
-{
-    font-size: 80px;
-    padding: 15px;
-
+.btn-txt {
+  animation: pulse infinite alternate;
+  animation-duration: 1s;
 }
 
-.condition
-{
-    text-align: center;
-}
-.boy
-{
-    background-color: yellow;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 200px;
-    margin-left: 500px;
-    border-radius: 15px;
-    padding: 15px;
-    width: 150px;
-}
-
-.girl
-{
-    background-color: yellow;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 200px;
-    margin-left: 40px;
-    border-radius: 15px;
-    padding: 15px;
-    width: 190px;  
-}
-
-.boy a{
-    text-decoration: none;
-}
-
-.girl a{
-    text-decoration: none;
+.heading {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 50px;
 }
