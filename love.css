@@ -15,6 +15,6 @@ body {
   text-align: center;
 }
 .love {
-  animation: rubberBand;
+  animation: rubberBand infinite alternate;
   animation-duration: 3s;
 }
