@@ -16,8 +16,34 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <style>
+      .btn-container {
+        margin-top: 20px;
+      }
+
+      @media (min-width: 1025px) {
+        .yest-btn {
+          display: none;
+        }
+        .no-btn {
+          position: absolute;
+          transition: 0.2s ease-in-out;
+        }
+        .yes-btn {
+          position: absolute;
+          left: 44vw;
+        }
+      }
+
+      /* Hide "No" button on small screens */
+      @media (max-width: 1024px) {
+        .no-btn {
+          display: none;
+        }
+      }
+    </style>
   </head>
-  <body class="p-1">
+  <body class="p-1 overflow-hidden">
     <div class="heading">
       <h1 class="props h3 text-danger fw-bolder">
         Will You Be My Life Partner 💞❓
@@ -26,13 +52,30 @@
     <div
       class="btn-container d-flex justify-content-center align-items-center gap-3"
     >
-      <button type="button" class="btn btn-warning btn-txt">
+      <button type="button" class="btn btn-warning btn-txt yes-btn">
         <a href="love.html" class="text-decoration-none h4 btn-txt">Yes</a>
       </button>
-      <button type="button" class="btn btn-warning btn-txt">
+      <button type="button" class="btn btn-warning btn-txt no-btn">
+        <a href="#" class="text-decoration-none h4">No</a>
+      </button>
+      <button type="button" class="btn btn-warning btn-txt yest-btn">
         <a href="love.html" class="text-decoration-none h4">Of Course,Yes</a>
       </button>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const noBtn = document.querySelector(".no-btn");
+
+        noBtn.addEventListener("mouseover", () => {
+          const viewportWidth = window.innerWidth;
+          const viewportHeight = window.innerHeight;
+          const newX = Math.random() * (viewportWidth - 150);
+          const newY = Math.random() * (viewportHeight - 150);
+          noBtn.style.left = `${newX}px`;
+          noBtn.style.top = `${newY}px`;
+        });
+      });
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
