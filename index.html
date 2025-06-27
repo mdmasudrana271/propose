@@ -41,6 +41,75 @@
           display: none;
         }
       }
+
+      /* creadit style */
+
+      .footer-credit {
+        position: fixed;
+        bottom: 12px; /* closer to bottom */
+        right: 12px; /* closer to right */
+        text-align: center;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px; /* less gap */
+      }
+
+      .footer-photo {
+        width: 40px; /* smaller photo */
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        opacity: 1;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.15); /* lighter shadow */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .footer-photo:hover {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+
+      .footer-text {
+        font-size: 0.7rem; /* smaller text */
+        font-weight: bold;
+        color: #1877f2; /* Facebook blue */
+        text-shadow: 0 0 4px #1877f2, 0 0 8px #1877f2; /* less intense glow */
+        letter-spacing: 0.5px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        opacity: 0.95;
+        animation: fbGlow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes fbGlow {
+        from {
+          text-shadow: 0 0 4px #1877f2, 0 0 8px #1877f2;
+        }
+        to {
+          text-shadow: 0 0 6px #145dbf, 0 0 10px #145dbf;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .footer-photo {
+          width: 30px;
+          height: 30px;
+        }
+        .footer-text {
+          font-size: 0.6rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .footer-photo {
+          width: 25px;
+          height: 25px;
+        }
+        .footer-text {
+          font-size: 0.5rem;
+        }
+      }
     </style>
   </head>
   <body class="p-1 overflow-hidden">
@@ -62,6 +131,11 @@
         <a href="love.html" class="text-decoration-none h4">Of Course,Yes</a>
       </button>
     </div>
+    <div class="footer-credit">
+      <img src="/image/masud.png" alt="Masud Photo" class="footer-photo" />
+      <p class="footer-text">Masud Production</p>
+    </div>
+
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const noBtn = document.querySelector(".no-btn");
