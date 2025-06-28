@@ -46,23 +46,25 @@
 
       .footer-credit {
         position: fixed;
-        bottom: 12px; /* closer to bottom */
-        right: 12px; /* closer to right */
+        bottom: 12px;
+        right: 12px;
         text-align: center;
         z-index: 999;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 4px; /* less gap */
+        gap: 4px;
+        max-width: 90vw; /* Prevent overflow on very small screens */
       }
 
       .footer-photo {
-        width: 40px; /* smaller photo */
+        width: 40px;
         height: 40px;
         border-radius: 50%;
         object-fit: cover;
         opacity: 1;
-        box-shadow: 0 0 6px rgba(0, 0, 0, 0.15); /* lighter shadow */
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+        border: 2px dotted #1877f2; /* Keep your dotted style */
         transition: transform 0.3s ease, opacity 0.3s ease;
       }
 
@@ -72,14 +74,15 @@
       }
 
       .footer-text {
-        font-size: 0.7rem; /* smaller text */
+        font-size: 0.7rem;
         font-weight: bold;
-        color: #1877f2; /* Facebook blue */
-        text-shadow: 0 0 4px #1877f2, 0 0 8px #1877f2; /* less intense glow */
+        color: #1877f2;
+        text-shadow: 0 0 4px #1877f2, 0 0 8px #1877f2;
         letter-spacing: 0.5px;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         opacity: 0.95;
         animation: fbGlow 2s ease-in-out infinite alternate;
+        word-break: break-word; /* Prevent text overflow on small screens */
       }
 
       @keyframes fbGlow {
@@ -91,6 +94,7 @@
         }
       }
 
+      /* Tablet screens */
       @media (max-width: 768px) {
         .footer-photo {
           width: 30px;
@@ -99,8 +103,13 @@
         .footer-text {
           font-size: 0.6rem;
         }
+        .footer-credit {
+          bottom: 10px;
+          right: 10px;
+        }
       }
 
+      /* Mobile screens */
       @media (max-width: 480px) {
         .footer-photo {
           width: 25px;
@@ -108,6 +117,11 @@
         }
         .footer-text {
           font-size: 0.5rem;
+        }
+        .footer-credit {
+          bottom: 8px;
+          right: 8px;
+          padding: 2px;
         }
       }
     </style>
